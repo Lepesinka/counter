@@ -7,6 +7,7 @@ function App() {
         <Index/> 
       </div>  
   //  </div>
+
   );
 }
 

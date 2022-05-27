@@ -29,4 +29,5 @@ export const changeInputValue=(value)=>{
         type: actionTypes.CHANGE_INPUT_VALUE,
         payload: Number(value),
     }
+
 }
