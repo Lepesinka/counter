@@ -1,7 +1,8 @@
 import React from 'react'
 import {increaseValue,decreaseValue, resetValue} from "../redux/action-creator"
 import {useSelector, useDispatch} from "react-redux"
-
+import styled from 'styled-components';
+import Button from './Button';
 
 
 function Index(){
@@ -11,53 +12,37 @@ function Index(){
     console.log("++++myState++++", myState)
     return(
         
-        <div style = {{
-            display:"flex",
-            //flexDirection:"column",
-            //justifyContent:"center",
-            //alignItems:"center",
-            fontSize:"18px",
+        <Wrapper>           
+             <P>{myState}</P> 
+             <BtnWrapper>
+                <Button symbol={'+'} onClick={()=>disPatch(increaseValue())}/>
+                <Button symbol={'R'} onClick={()=>disPatch(resetValue())}/>         
+                <Button symbol={'-'} onClick={()=>disPatch(decreaseValue())}/>                
+                <Button symbol={'Add'} />
+            </BtnWrapper>          
             
-        }
-        }>
-           
-           
-            <button
-            style={{
-                width: 150,
-                height: 50,                
-                backgroundColor:"DarkCyan",
-                color:"white",
-                margin: 20
-            }}
-            onClick={()=>disPatch(increaseValue())}
-            >Добавить</button>
-            <p>{myState}</p>
-            <button
-            style={{
-                width: 150,
-                height: 50,                 
-                backgroundColor:"DarkCyan",
-                color:"white",
-                margin: 20
-                
-            }} 
-            onClick={()=>disPatch(decreaseValue())}    
-            >Удалить</button>
-            
-            <button
-            style={{
-                width: 150,
-                height: 50,                 
-                backgroundColor:"DarkCyan",
-                color:"white",
-                margin: 20 
-            }}
-            onClick={()=>disPatch(resetValue())}              
-            >Обнулить</button>
-            
-            
-        </div>
+        </Wrapper>
     )
 }
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #263238;
+`
+
+const BtnWrapper = styled.div`
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+`
+
+const P = styled.p`
+    font-size: 40px;
+    color: #fff;
+`
+
 export default Index
