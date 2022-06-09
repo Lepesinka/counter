@@ -20,6 +20,11 @@ export const reducer=(state=initialState,action)=>{
                     ...state,
                     count:state.count=0
                 }
+            case actionTypes. ADD:
+                return{
+                    ...state,
+                    count:state.count=0
+                                    }    
 
             default:
                 return state

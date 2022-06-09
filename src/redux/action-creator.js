@@ -17,3 +17,9 @@ export const resetValue=()=>{
     }   
      
 }
+export const addValue=()=>{
+    return{
+        type:actionTypes.ADD
+    }   
+     
+}

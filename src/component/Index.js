@@ -1,5 +1,5 @@
 import React from 'react'
-import {increaseValue,decreaseValue, resetValue} from "../redux/action-creator"
+import {increaseValue,decreaseValue, resetValue,addValue} from "../redux/action-creator"
 import {useSelector, useDispatch} from "react-redux"
 import styled from 'styled-components';
 import Button from './Button';
@@ -17,10 +17,13 @@ function Index(){
              <BtnWrapper>
                 <Button symbol={'+'} onClick={()=>disPatch(increaseValue())}/>
                 <Button symbol={'R'} onClick={()=>disPatch(resetValue())}/>         
-                <Button symbol={'-'} onClick={()=>disPatch(decreaseValue())}/>                
-                <Button symbol={'Add'} />
+                <Button symbol={'-'} onClick={()=>disPatch(decreaseValue())}/>               
+                
             </BtnWrapper>          
-            
+            <BtnWrapper>
+                <Input   />
+                <Button symbol={'Add'}onClick={()=>disPatch(addValue())} />
+            </BtnWrapper>
         </Wrapper>
     )
 }
@@ -43,6 +46,12 @@ const BtnWrapper = styled.div`
 const P = styled.p`
     font-size: 40px;
     color: #fff;
+`
+const Input = styled.input`
+    width: 100px;
+    type = "number";
+    font-size: 35px;  
+    
 `
 
 export default Index
