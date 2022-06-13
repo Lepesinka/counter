@@ -1,0 +1,16 @@
+* {
+
+}
+#root {   
+ 
+}
+
+.App {
+    width: 500px;
+}
+.post{
+    width: 320px;
+    height: 150px;
+    border: 2px solid #c852f6; /* Параметры рамки */
+    background: rgb(126, 192, 223); /* Цвет фона */
+}
